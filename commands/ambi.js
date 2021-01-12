@@ -136,6 +136,7 @@ const runAmbiSimulation = (numOfKills, args, message) => {
       rewardsObj[player] = rewardString;
     });
   }
+    rewardsObj['kiekrz'] = '';
 
   let formattedDropsObjectsArr = [];
   Object.keys(rewardsObj).forEach(function (key) {

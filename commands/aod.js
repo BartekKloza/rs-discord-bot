@@ -69,6 +69,7 @@ const runAodSimulation = (numOfKills, args, message) => {
     rewardsObj[player] = rewardString;
 
   });
+  rewardsObj['kiekrz'] = '';
   let formattedDropsObjectsArr = [];
   Object.keys(rewardsObj).forEach(function (key) {
     if (rewardsObj[key].length > 0) {
