@@ -82,7 +82,7 @@ const runAodSimulation = (numOfKills, args, message) => {
     const msgEmbed = new Discord.MessageEmbed()
       .setColor('#0099ff')
       .setTitle('Nikt nie dostal dropa!')
-      .setAuthor('Symulacja dropow AOD', 'https://runescape.wiki/images/2/2b/Nex_%28Angel_of_Death%29.png')
+      .setAuthor('Symulacja dropow AOD')
       .setThumbnail('https://runescape.wiki/images/2/2b/Nex_%28Angel_of_Death%29.png')
       .setTimestamp()
       .setFooter('Bot stworzony przez BronzoPL');
@@ -93,7 +93,7 @@ const runAodSimulation = (numOfKills, args, message) => {
   const msgEmbed = new Discord.MessageEmbed()
     .setColor('#0099ff')
     .setTitle('Dropy: (liczba kc = ' + numOfKills + ')')
-    .setAuthor('Symulacja dropow AOD', 'https://runescape.wiki/images/2/2b/Nex_%28Angel_of_Death%29.png')
+    .setAuthor('Symulacja dropow AOD')
     .setThumbnail('https://runescape.wiki/images/2/2b/Nex_%28Angel_of_Death%29.png')
     .addFields(...formattedDropsObjectsArr)
     .setTimestamp()

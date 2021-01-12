@@ -1,9 +1,11 @@
 const Discord = require('discord.js');
-
-const client = new Discord.Client();
+require('dotenv').config();
 
 const runAodSimulation = require('./commands/aod');
 const runAmbiSimulation = require('./commands/ambi');
+const getVisWaxInfo = require('./commands/viswax');
+
+const client = new Discord.Client();
 
 const prefix = '!';
 
@@ -22,19 +24,23 @@ client.on('message', message => {
     return;
   }
   args.shift();
-  
 
   if (command === 'aod') {
-    runAodSimulation(numOfKills, args, message)
+    runAodSimulation(numOfKills, args, message);
   }
   if (command === 'ambi') {
-    runAmbiSimulation(numOfKills, args, message)
+    runAmbiSimulation(numOfKills, args, message);
+  }
+  if (command === 'wax') {
+    getVisWaxInfo(message);
   }
   if (command === 'bronzo') {
     message.channel.send('Dostępne komendy:')
-    message.channel.send('Aod symulacja: !aod 100 bronzo kalif kiekrz applez zi00mek loli rafix');
-    message.channel.send('Ambi symulacja: !ambi 20 bronzo');
+    message.channel.send('**Aod symulacja:** !aod 100 bronzo kalif kiekrz applez zi00mek loli rafix');
+    message.channel.send('**Ambi symulacja:** !ambi 20 bronzo');
+    message.channel.send('**Dzisiejsze VisWax combo:** !wax');
+    message.channel.send('Kod zrodlowy bota: <https://github.com/BartekKloza/rs-discord-bot>')
   }
 })
 
-client.login('Nzk3NDY1MTA5NDA3NDY1NTQz.X_m3Qg.As6N6_u9rjVXg-Yx_6gx0ktj7JM');
+client.login(process.env.DISCORD_BOT_TOKEN);

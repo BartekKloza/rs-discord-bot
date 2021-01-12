@@ -115,8 +115,8 @@ const runAmbiSimulation = (numOfKills, args, message) => {
           if (possiblePartsArr.length == 0) possiblePartsArr = ['limb', 'stock', 'mechanism'];
           console.log('possiblePartsArr', possiblePartsArr);
           let rollXbowPart = getRandomInt(0, possiblePartsArr.length);
-          let rollDouble = getRandomInt(1, 6);
-          let shouldGetDoubled = rollDouble == 1 ? true : false;
+          let rollDouble = getRandomInt(1, 10001);
+          let shouldGetDoubled = rollDouble % 5 == 0 ? true : false;
                   console.log('rollDouble', rollDouble, shouldGetDoubled)
           if (possiblePartsArr[rollXbowPart] == 'limb' && shouldGetDoubled) rewardString += ' <:limb:798298909520691231> <:limb:798298909520691231>';
           if (possiblePartsArr[rollXbowPart] == 'limb' && !shouldGetDoubled) rewardString += ' <:limb:798298909520691231>';
@@ -150,8 +150,8 @@ const runAmbiSimulation = (numOfKills, args, message) => {
     const msgEmbed = new Discord.MessageEmbed()
       .setColor('#0099ff')
       .setTitle('Nikt nie dostal dropa!')
-      .setAuthor('Symulacja dropow AOD', 'https://runescape.wiki/images/2/2b/Nex_%28Angel_of_Death%29.png')
-      .setThumbnail('https://runescape.wiki/images/2/2b/Nex_%28Angel_of_Death%29.png')
+      .setAuthor('Symulacja dropow Ambasadora')
+      .setThumbnail('https://runescape.wiki/images/7/7e/The_Ambassador.png?efb9b')
       .setTimestamp()
       .setFooter('Bot stworzony przez BronzoPL');
     message.channel.send(msgEmbed);
@@ -161,8 +161,8 @@ const runAmbiSimulation = (numOfKills, args, message) => {
   const msgEmbed = new Discord.MessageEmbed()
     .setColor('#0099ff')
     .setTitle('Dropy: (liczba kc = ' + numOfKills + ')')
-    .setAuthor('Symulacja dropow AOD', 'https://runescape.wiki/images/2/2b/Nex_%28Angel_of_Death%29.png')
-    .setThumbnail('https://runescape.wiki/images/2/2b/Nex_%28Angel_of_Death%29.png')
+    .setAuthor('Symulacja dropow Ambasadora')
+    .setThumbnail('https://runescape.wiki/images/7/7e/The_Ambassador.png?efb9b')
     .addFields(...formattedDropsObjectsArr)
     .setTimestamp()
     .setFooter('Bot stworzony przez BronzoPL');
