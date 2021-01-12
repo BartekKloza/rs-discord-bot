@@ -27,30 +27,33 @@ const runAmbiSimulation = (numOfKills, args, message) => {
       let possiblePartsArr = ['limb', 'stock', 'mechanism'];
       console.log('bambi debug');
       console.log(resultObj[player]);
-      playerArr.forEach(number => {
-        if (number % 55 == 0) {
-          // if all have been rolled, reset
-          if (possiblePartsArr.length == 0) possiblePartsArr = ['limb', 'stock', 'mechanism'];
-          console.log('possiblePartsArr', possiblePartsArr);
-          let rollXbowPart = getRandomInt(0, possiblePartsArr.length);
-          let rollDouble = getRandomInt(1, 6);
-          let shouldGetDoubled = rollDouble == 1 ? true : false;
-                  console.log('rollDouble', rollDouble, shouldGetDoubled)
-          if (possiblePartsArr[rollXbowPart] == 'limb' && shouldGetDoubled) rewardString += ' <:limb:798298909520691231> <:limb:798298909520691231>';
-          if (possiblePartsArr[rollXbowPart] == 'limb' && !shouldGetDoubled) rewardString += ' <:limb:798298909520691231>';
-          if (possiblePartsArr[rollXbowPart] == 'stock' && shouldGetDoubled) rewardString += ' <:stock:798299059038847036> <:stock:798299059038847036>';
-          if (possiblePartsArr[rollXbowPart] == 'stock' && !shouldGetDoubled) rewardString += ' <:stock:798299059038847036>';
-          if (possiblePartsArr[rollXbowPart] == 'mechanism' && shouldGetDoubled) rewardString += ' <:mechanism:798299009478688779> <:mechanism:798299009478688779>';
-          if (possiblePartsArr[rollXbowPart] == 'mechanism' && !shouldGetDoubled) rewardString += ' <:mechanism:798299009478688779>';
-          possiblePartsArr.splice(rollXbowPart, 1);
-          anyDrops = true;
-        }
-        if (number % 300 == 0 && pet == false) {
-          rewardString += ' <:bambi:798299922653773854>';
-          anyDrops = true;
-          pet = true;
-        }
-      });
+      if (player != 'kiekrz') {
+
+        playerArr.forEach(number => {
+          if (number % 55 == 0) {
+            // if all have been rolled, reset
+            if (possiblePartsArr.length == 0) possiblePartsArr = ['limb', 'stock', 'mechanism'];
+            console.log('possiblePartsArr', possiblePartsArr);
+            let rollXbowPart = getRandomInt(0, possiblePartsArr.length);
+            let rollDouble = getRandomInt(1, 6);
+            let shouldGetDoubled = rollDouble == 1 ? true : false;
+            console.log('rollDouble', rollDouble, shouldGetDoubled)
+            if (possiblePartsArr[rollXbowPart] == 'limb' && shouldGetDoubled) rewardString += ' <:limb:798298909520691231> <:limb:798298909520691231>';
+            if (possiblePartsArr[rollXbowPart] == 'limb' && !shouldGetDoubled) rewardString += ' <:limb:798298909520691231>';
+            if (possiblePartsArr[rollXbowPart] == 'stock' && shouldGetDoubled) rewardString += ' <:stock:798299059038847036> <:stock:798299059038847036>';
+            if (possiblePartsArr[rollXbowPart] == 'stock' && !shouldGetDoubled) rewardString += ' <:stock:798299059038847036>';
+            if (possiblePartsArr[rollXbowPart] == 'mechanism' && shouldGetDoubled) rewardString += ' <:mechanism:798299009478688779> <:mechanism:798299009478688779>';
+            if (possiblePartsArr[rollXbowPart] == 'mechanism' && !shouldGetDoubled) rewardString += ' <:mechanism:798299009478688779>';
+            possiblePartsArr.splice(rollXbowPart, 1);
+            anyDrops = true;
+          }
+          if (number % 300 == 0 && pet == false) {
+            rewardString += ' <:bambi:798299922653773854>';
+            anyDrops = true;
+            pet = true;
+          }
+        });
+      }
       rewardsObj[player] = rewardString;
     });
   }
@@ -68,30 +71,33 @@ const runAmbiSimulation = (numOfKills, args, message) => {
       let possiblePartsArr = ['limb', 'stock', 'mechanism'];
       console.log('bambi debug');
       console.log(resultObj[player]);
-      playerArr.forEach(number => {
-        if (number % 167 == 0) {
-          // if all have been rolled, reset
-          if (possiblePartsArr.length == 0) possiblePartsArr = ['limb', 'stock', 'mechanism'];
-          console.log('possiblePartsArr', possiblePartsArr);
-          let rollXbowPart = getRandomInt(0, possiblePartsArr.length);
-          let rollDouble = getRandomInt(1, 6);
-          let shouldGetDoubled = rollDouble == 1 ? true : false;
-                  console.log('rollDouble', rollDouble, shouldGetDoubled)
-          if (possiblePartsArr[rollXbowPart] == 'limb' && shouldGetDoubled) rewardString += ' <:limb:798298909520691231> <:limb:798298909520691231>';
-          if (possiblePartsArr[rollXbowPart] == 'limb' && !shouldGetDoubled) rewardString += ' <:limb:798298909520691231>';
-          if (possiblePartsArr[rollXbowPart] == 'stock' && shouldGetDoubled) rewardString += ' <:stock:798299059038847036> <:stock:798299059038847036>';
-          if (possiblePartsArr[rollXbowPart] == 'stock' && !shouldGetDoubled) rewardString += ' <:stock:798299059038847036>';
-          if (possiblePartsArr[rollXbowPart] == 'mechanism' && shouldGetDoubled) rewardString += ' <:mechanism:798299009478688779> <:mechanism:798299009478688779>';
-          if (possiblePartsArr[rollXbowPart] == 'mechanism' && !shouldGetDoubled) rewardString += ' <:mechanism:798299009478688779>';
-          possiblePartsArr.splice(rollXbowPart, 1);
-          anyDrops = true;
-        }
-        if (number % 1000 == 0 && pet == false) {
-          rewardString += ' <:bambi:798299922653773854>';
-          anyDrops = true;
-          pet = true;
-        }
-      });
+      if (player != 'kiekrz') {
+
+        playerArr.forEach(number => {
+          if (number % 167 == 0) {
+            // if all have been rolled, reset
+            if (possiblePartsArr.length == 0) possiblePartsArr = ['limb', 'stock', 'mechanism'];
+            console.log('possiblePartsArr', possiblePartsArr);
+            let rollXbowPart = getRandomInt(0, possiblePartsArr.length);
+            let rollDouble = getRandomInt(1, 6);
+            let shouldGetDoubled = rollDouble == 1 ? true : false;
+            console.log('rollDouble', rollDouble, shouldGetDoubled)
+            if (possiblePartsArr[rollXbowPart] == 'limb' && shouldGetDoubled) rewardString += ' <:limb:798298909520691231> <:limb:798298909520691231>';
+            if (possiblePartsArr[rollXbowPart] == 'limb' && !shouldGetDoubled) rewardString += ' <:limb:798298909520691231>';
+            if (possiblePartsArr[rollXbowPart] == 'stock' && shouldGetDoubled) rewardString += ' <:stock:798299059038847036> <:stock:798299059038847036>';
+            if (possiblePartsArr[rollXbowPart] == 'stock' && !shouldGetDoubled) rewardString += ' <:stock:798299059038847036>';
+            if (possiblePartsArr[rollXbowPart] == 'mechanism' && shouldGetDoubled) rewardString += ' <:mechanism:798299009478688779> <:mechanism:798299009478688779>';
+            if (possiblePartsArr[rollXbowPart] == 'mechanism' && !shouldGetDoubled) rewardString += ' <:mechanism:798299009478688779>';
+            possiblePartsArr.splice(rollXbowPart, 1);
+            anyDrops = true;
+          }
+          if (number % 1000 == 0 && pet == false) {
+            rewardString += ' <:bambi:798299922653773854>';
+            anyDrops = true;
+            pet = true;
+          }
+        });
+      }
       rewardsObj[player] = rewardString;
     });
   }
@@ -101,42 +107,45 @@ const runAmbiSimulation = (numOfKills, args, message) => {
     for (i = 0; i < numOfKills; i++) {
       resultObj[player].push(getRandomInt(1, 399001));
     };
-  });
-    args.forEach(player => {
-      let pet = false;
-      let playerArr = resultObj[player];
-      let rewardString = '';
-      let possiblePartsArr = ['limb', 'stock', 'mechanism'];
-      console.log('bambi debug');
-      console.log(resultObj[player]);
-      playerArr.forEach(number => {
-        if (number % 266 == 0) {
-          // if all have been rolled, reset
-          if (possiblePartsArr.length == 0) possiblePartsArr = ['limb', 'stock', 'mechanism'];
-          console.log('possiblePartsArr', possiblePartsArr);
-          let rollXbowPart = getRandomInt(0, possiblePartsArr.length);
-          let rollDouble = getRandomInt(1, 10001);
-          let shouldGetDoubled = rollDouble % 5 == 0 ? true : false;
-                  console.log('rollDouble', rollDouble, shouldGetDoubled)
-          if (possiblePartsArr[rollXbowPart] == 'limb' && shouldGetDoubled) rewardString += ' <:limb:798298909520691231> <:limb:798298909520691231>';
-          if (possiblePartsArr[rollXbowPart] == 'limb' && !shouldGetDoubled) rewardString += ' <:limb:798298909520691231>';
-          if (possiblePartsArr[rollXbowPart] == 'stock' && shouldGetDoubled) rewardString += ' <:stock:798299059038847036> <:stock:798299059038847036>';
-          if (possiblePartsArr[rollXbowPart] == 'stock' && !shouldGetDoubled) rewardString += ' <:stock:798299059038847036>';
-          if (possiblePartsArr[rollXbowPart] == 'mechanism' && shouldGetDoubled) rewardString += ' <:mechanism:798299009478688779> <:mechanism:798299009478688779>';
-          if (possiblePartsArr[rollXbowPart] == 'mechanism' && !shouldGetDoubled) rewardString += ' <:mechanism:798299009478688779>';
-          possiblePartsArr.splice(rollXbowPart, 1);
-          anyDrops = true;
-        }
-        if (number % 1500 == 0 && pet == false) {
-          rewardString += ' <:bambi:798299922653773854>';
-          anyDrops = true;
-          pet = true;
-        }
+    });
+    if (player != 'kiekrz') {
+
+      args.forEach(player => {
+        let pet = false;
+        let playerArr = resultObj[player];
+        let rewardString = '';
+        let possiblePartsArr = ['limb', 'stock', 'mechanism'];
+        console.log('bambi debug');
+        console.log(resultObj[player]);
+        playerArr.forEach(number => {
+          if (number % 266 == 0) {
+            // if all have been rolled, reset
+            if (possiblePartsArr.length == 0) possiblePartsArr = ['limb', 'stock', 'mechanism'];
+            console.log('possiblePartsArr', possiblePartsArr);
+            let rollXbowPart = getRandomInt(0, possiblePartsArr.length);
+            let rollDouble = getRandomInt(1, 10001);
+            let shouldGetDoubled = rollDouble % 5 == 0 ? true : false;
+            console.log('rollDouble', rollDouble, shouldGetDoubled)
+            if (possiblePartsArr[rollXbowPart] == 'limb' && shouldGetDoubled) rewardString += ' <:limb:798298909520691231> <:limb:798298909520691231>';
+            if (possiblePartsArr[rollXbowPart] == 'limb' && !shouldGetDoubled) rewardString += ' <:limb:798298909520691231>';
+            if (possiblePartsArr[rollXbowPart] == 'stock' && shouldGetDoubled) rewardString += ' <:stock:798299059038847036> <:stock:798299059038847036>';
+            if (possiblePartsArr[rollXbowPart] == 'stock' && !shouldGetDoubled) rewardString += ' <:stock:798299059038847036>';
+            if (possiblePartsArr[rollXbowPart] == 'mechanism' && shouldGetDoubled) rewardString += ' <:mechanism:798299009478688779> <:mechanism:798299009478688779>';
+            if (possiblePartsArr[rollXbowPart] == 'mechanism' && !shouldGetDoubled) rewardString += ' <:mechanism:798299009478688779>';
+            possiblePartsArr.splice(rollXbowPart, 1);
+            anyDrops = true;
+          }
+          if (number % 1500 == 0 && pet == false) {
+            rewardString += ' <:bambi:798299922653773854>';
+            anyDrops = true;
+            pet = true;
+          }
+        });
       });
       rewardsObj[player] = rewardString;
-    });
+
+    }
   }
-    rewardsObj['kiekrz'] = '';
 
   let formattedDropsObjectsArr = [];
   Object.keys(rewardsObj).forEach(function (key) {

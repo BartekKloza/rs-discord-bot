@@ -29,7 +29,8 @@ const runAodSimulation = (numOfKills, args, message) => {
     let orb = 0;
     let rewardString = '';
     console.log(playerArr)
-    playerArr.forEach(number => {
+    if (player != 'kiekrz') {
+      playerArr.forEach(number => {
       if (number % 252 == 0) {
         codex = codex + 1;
         rewardString += ' <:codex:678658206603673620>';
@@ -66,10 +67,11 @@ const runAodSimulation = (numOfKills, args, message) => {
         anyDrops = true;
       }
     });
+    }
+    
     rewardsObj[player] = rewardString;
 
   });
-  rewardsObj['kiekrz'] = '';
   let formattedDropsObjectsArr = [];
   Object.keys(rewardsObj).forEach(function (key) {
     if (rewardsObj[key].length > 0) {
