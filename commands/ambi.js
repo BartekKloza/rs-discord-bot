@@ -27,7 +27,6 @@ const runAmbiSimulation = (numOfKills, args, message) => {
       let possiblePartsArr = ['limb', 'stock', 'mechanism'];
       console.log('bambi debug');
       console.log(resultObj[player]);
-      if (player != 'kiekrz') {
 
         playerArr.forEach(number => {
           if (number % 55 == 0) {
@@ -53,7 +52,6 @@ const runAmbiSimulation = (numOfKills, args, message) => {
             pet = true;
           }
         });
-      }
       rewardsObj[player] = rewardString;
     });
   }
@@ -71,7 +69,6 @@ const runAmbiSimulation = (numOfKills, args, message) => {
       let possiblePartsArr = ['limb', 'stock', 'mechanism'];
       console.log('bambi debug');
       console.log(resultObj[player]);
-      if (player != 'kiekrz') {
 
         playerArr.forEach(number => {
           if (number % 167 == 0) {
@@ -97,7 +94,6 @@ const runAmbiSimulation = (numOfKills, args, message) => {
             pet = true;
           }
         });
-      }
       rewardsObj[player] = rewardString;
     });
   }
@@ -108,7 +104,6 @@ const runAmbiSimulation = (numOfKills, args, message) => {
       resultObj[player].push(getRandomInt(1, 399001));
     };
     });
-    if (player != 'kiekrz') {
 
       args.forEach(player => {
         let pet = false;
@@ -142,9 +137,8 @@ const runAmbiSimulation = (numOfKills, args, message) => {
           }
         });
       });
-      rewardsObj[player] = rewardString;
+        rewardsObj[player] = rewardString;
 
-    }
   }
 
   let formattedDropsObjectsArr = [];

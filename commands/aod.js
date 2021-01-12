@@ -29,7 +29,6 @@ const runAodSimulation = (numOfKills, args, message) => {
     let orb = 0;
     let rewardString = '';
     console.log(playerArr)
-    if (player != 'kiekrz') {
       playerArr.forEach(number => {
       if (number % 252 == 0) {
         codex = codex + 1;
@@ -67,7 +66,6 @@ const runAodSimulation = (numOfKills, args, message) => {
         anyDrops = true;
       }
     });
-    }
     
     rewardsObj[player] = rewardString;
 
