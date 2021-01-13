@@ -136,9 +136,8 @@ const runAmbiSimulation = (numOfKills, args, message) => {
             pet = true;
           }
         });
-      });
         rewardsObj[player] = rewardString;
-
+      });
   }
 
   let formattedDropsObjectsArr = [];
