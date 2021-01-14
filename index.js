@@ -3,7 +3,9 @@ require('dotenv').config();
 
 const runAodSimulation = require('./commands/aod');
 const runAmbiSimulation = require('./commands/ambi');
+const runTelosSimulation = require('./commands/telos');
 const getVisWaxInfo = require('./commands/viswax');
+const bronzoCommand = require('./commands/bronzo');
 
 const client = new Discord.Client();
 
@@ -31,15 +33,14 @@ client.on('message', message => {
   if (command === 'ambi') {
     runAmbiSimulation(numOfKills, args, message);
   }
+  if (command === 'telos') {
+    runTelosSimulation(numOfKills, args, message);
+  }
   if (command === 'wax') {
     getVisWaxInfo(message);
   }
   if (command === 'bronzo') {
-    message.channel.send('Dostępne komendy:')
-    message.channel.send('**Aod symulacja:** !aod 100 bronzo kalif kiekrz applez zi00mek loli rafix');
-    message.channel.send('**Ambi symulacja:** !ambi 20 bronzo');
-    message.channel.send('**Dzisiejsze VisWax combo:** !wax');
-    message.channel.send('Kod zrodlowy bota: <https://github.com/BartekKloza/rs-discord-bot>')
+    bronzoCommand(message);
   }
 })
 

@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
 
 const getRandomInt = require('../helpers/getRandomInt');
+const embededMessage = require('../helpers/embededMessage');
 
 const runAodSimulation = (numOfKills, args, message) => {
   let resultObj = {};
@@ -90,15 +91,12 @@ const runAodSimulation = (numOfKills, args, message) => {
     message.channel.send(msgEmbed);
     return;
   }
-
-  const msgEmbed = new Discord.MessageEmbed()
-    .setColor('#0099ff')
-    .setTitle('Dropy: (liczba kc = ' + numOfKills + ')')
-    .setAuthor('Symulacja dropow AOD')
-    .setThumbnail('https://runescape.wiki/images/2/2b/Nex_%28Angel_of_Death%29.png')
-    .addFields(...formattedDropsObjectsArr)
-    .setTimestamp()
-    .setFooter('Bot stworzony przez BronzoPL');
+  const msgEmbed = embededMessage(
+    numOfKills,
+    'https://runescape.wiki/images/2/2b/Nex_%28Angel_of_Death%29.png',
+    formattedDropsObjectsArr,
+    'Symulacja dropow AOD'
+  );
 
   message.channel.send(msgEmbed).catch(e => {
     message.channel.send("Error! Prawdopodobnie zbyt duza liczba dropow do wyswietlenia! Sprobuj z mniejszym kc!")
