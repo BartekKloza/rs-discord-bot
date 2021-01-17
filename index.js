@@ -5,6 +5,7 @@ const runAodSimulation = require('./commands/aod');
 const runAmbiSimulation = require('./commands/ambi');
 const runTelosSimulation = require('./commands/telos');
 const getVisWaxInfo = require('./commands/viswax');
+const getMerchantInfo = require('./commands/merch');
 const bronzoCommand = require('./commands/bronzo');
 
 const client = new Discord.Client();
@@ -38,6 +39,9 @@ client.on('message', message => {
   }
   if (command === 'wax') {
     getVisWaxInfo(message);
+  }
+  if (command === 'merch') {
+    getMerchantInfo(message);
   }
   if (command === 'bronzo') {
     bronzoCommand(message);

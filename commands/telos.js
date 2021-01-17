@@ -2,29 +2,36 @@ const Discord = require('discord.js');
 
 const getRandomInt = require('../helpers/getRandomInt');
 
-const runTelosSimulation = (enrage, args, message) => {
-  message.channel.send('DEBUG enrage = ' + enrage)
-  enrage = parseInt(enrage);
-  let streak = args[0];
-  let lotd = args[1] == 1 ? true : false;
-  let player = args[2]
-  let anyDrops = false;
-  let modifiedEnrage = enrage;
-  if (args.length > 3) {
-    message.channel.send('Zle uzyta komenda! Przyklad: !telos 200 10 1 bronzo');
-    return;
-  }
-  if (lotd) {
-    console.log(typeof enrage);
-    modifiedEnrage = Math.min(enrage + 25, 4000);
-  }
+const rollEnrageIncrease = () => getRandomInt(5, 20);
+
+const getUniqueValue = (enrage, streak, lotd) => {
+  let modifiedEnrage = lotd ? Math.min(enrage + 25, 4000) : Math.min(enrage, 4000)
   let unique = Math.floor(10000 / (10 + modifiedEnrage * 0.25 + streak * 3));
   if (enrage < 100) unique = unique * 10;
   if (enrage < 25) unique = unique * 3;
   unique = Math.max(unique, 9);
-  message.channel.send('DEBUG enrage = ' + modifiedEnrage + '| streak = ' + streak);
-  message.channel.send('Szansa na orba = ' + '1/' + Math.ceil(unique * 115 / 75));
-  message.channel.send('Szansa na specyficzny dormant/codex = ' + '1/' + Math.ceil(unique * 115 / 10));
+  return unique;
+}
+
+const getOrbChance = (unique) => Math.ceil(unique * 115 / 75)
+const getDormantCodexChance = (unique) => Math.ceil(unique * 115 / 10)
+
+const runTelosSimulation = (enrage, args, message) => {
+  if (args.length != 3) {
+    message.channel.send('Zle uzyta komenda! Przyklad: !telos 200 10 1 bronzo');
+    return;
+  }
+  enrage = parseInt(enrage);
+  let streak = args[0];
+  let lotd = args[1] == 1 ? true : false;
+  let playerName = args[2]
+  let anyDrops = false;
+  let modifiedEnrage = enrage;
+  
+  let unique = getUniqueValue(enrage, streak, lotd);
+  
+  message.channel.send('Szansa na orba = ' + '1/' + getOrbChance(unique));
+  message.channel.send('Szansa na specyficzny dormant/codex = ' + '1/' + getDormantCodexChance(unique));
 
   
 

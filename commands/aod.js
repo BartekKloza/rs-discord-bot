@@ -92,7 +92,7 @@ const runAodSimulation = (numOfKills, args, message) => {
     return;
   }
   const msgEmbed = embededMessage(
-    numOfKills,
+    'Dropy: (liczba kc = ' + numOfKills + ')',
     'https://runescape.wiki/images/2/2b/Nex_%28Angel_of_Death%29.png',
     formattedDropsObjectsArr,
     'Symulacja dropow AOD'

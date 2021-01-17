@@ -1,8 +1,8 @@
 const Discord = require('discord.js');
 
-const msgEmbed = (numOfKills, imgUrl, formattedDropsObjectsArr, author) => new Discord.MessageEmbed()
+const msgEmbed = (title, imgUrl, formattedDropsObjectsArr, author) => new Discord.MessageEmbed()
     .setColor('#0099ff')
-    .setTitle('Dropy: (liczba kc = ' + numOfKills + ')')
+    .setTitle(title)
     .setAuthor(author)
     .setThumbnail(imgUrl)
     .addFields(...formattedDropsObjectsArr)
