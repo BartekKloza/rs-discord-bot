@@ -4,10 +4,11 @@ require('dotenv').config();
 const runAodSimulation = require('./commands/aod');
 const runAmbiSimulation = require('./commands/ambi');
 const runTelosSimulation = require('./commands/telos');
+const runSolakSimulation = require('./commands/solak');
 const getVisWaxInfo = require('./commands/viswax');
 const getMerchantInfo = require('./commands/merch');
 const bronzoCommand = require('./commands/bronzo');
-const handleDropCommand = require('./commands/drop')
+const handleDropCommand = require('./commands/drop');
 
 const client = new Discord.Client();
 
@@ -37,6 +38,9 @@ client.on('message', message => {
   }
   if (command === 'telos') {
     runTelosSimulation(numOfKills, args, message);
+  }
+  if (command === 'solak') {
+    runSolakSimulation(numOfKills, args, message);
   }
   // if (command === 'drop') {
   //   handleDropCommand(numOfKills, args, message);
