@@ -7,6 +7,7 @@ const runTelosSimulation = require('./commands/telos');
 const getVisWaxInfo = require('./commands/viswax');
 const getMerchantInfo = require('./commands/merch');
 const bronzoCommand = require('./commands/bronzo');
+const handleDropCommand = require('./commands/drop')
 
 const client = new Discord.Client();
 
@@ -37,6 +38,9 @@ client.on('message', message => {
   if (command === 'telos') {
     runTelosSimulation(numOfKills, args, message);
   }
+  // if (command === 'drop') {
+  //   handleDropCommand(numOfKills, args, message);
+  // }
   if (command === 'wax') {
     getVisWaxInfo(message);
   }
